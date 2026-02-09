@@ -114,10 +114,6 @@ def parent():
     <p>正解数: {correct}</p>
     """
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
 @app.route("/admin")
 def admin():
     init_db()
@@ -182,3 +178,7 @@ def admin():
     </body>
     </html>
     """
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
