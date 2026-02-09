@@ -117,3 +117,68 @@ def parent():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+@app.route("/admin")
+def admin():
+    init_db()
+
+    with sqlite3.connect(DB) as conn:
+        rows = conn.execute("""
+            SELECT
+              substr(time, 1, 10) as day,
+              COUNT(*) as total,
+              SUM(correct) as correct
+            FROM logs
+            GROUP BY day
+            ORDER BY day DESC
+        """).fetchall()
+
+    rows_html = ""
+    for day, total, correct in rows:
+        rows_html += f"""
+        <tr>
+            <td>{day}</td>
+            <td>{total}</td>
+            <td>{correct}</td>
+        </tr>
+        """
+
+    return f"""
+    <html>
+    <head>
+        <title>学習ログ（保護者用）</title>
+        <style>
+            body {{
+                font-family: sans-serif;
+                padding: 20px;
+            }}
+            table {{
+                border-collapse: collapse;
+                width: 100%;
+            }}
+            th, td {{
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }}
+            th {{
+                background-color: #f5f5f5;
+            }}
+        </style>
+    </head>
+    <body>
+
+        <h2>📘 学習履歴（1日ごと）</h2>
+
+        <table>
+            <tr>
+                <th>日付</th>
+                <th>解いた問題数</th>
+                <th>正解数</th>
+            </tr>
+            {rows_html}
+        </table>
+
+    </body>
+    </html>
+    """
