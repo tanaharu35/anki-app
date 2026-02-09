@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, redirect
 import random
 import sqlite3
