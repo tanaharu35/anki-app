@@ -24,6 +24,9 @@ def init_db():
 def quiz():
     init_db()
 
+    message = ""
+    effect = ""
+
     if request.method == "POST":
         qid = int(request.form["qid"])
         user_answer = request.form["answer"].strip()
@@ -37,17 +40,63 @@ def quiz():
                 (qid, correct, datetime.now().isoformat())
             )
 
-        return redirect("/")
+        if correct:
+            message = "🎉 せいかい！！すごい！！ 🎉"
+            effect = "correct"
+        else:
+            message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
+            effect = "wrong"
 
     question = random.choice(QUESTIONS)
 
     return f"""
-    <h2>{question['q']}</h2>
-    <form method="post">
-        <input type="hidden" name="qid" value="{question['id']}">
-        <input name="answer" autofocus>
-        <button>答える</button>
-    </form>
+    <html>
+    <head>
+        <style>
+            body {{
+                font-family: sans-serif;
+                text-align: center;
+                background-color: {"#fff3a0" if effect=="correct" else "#f0f0f0"};
+            }}
+            .correct {{
+                font-size: 32px;
+                color: red;
+                animation: pop 0.4s ease-in-out infinite alternate;
+            }}
+            @keyframes pop {{
+                from {{ transform: scale(1); }}
+                to {{ transform: scale(1.1); }}
+            }}
+            .wrong {{
+                font-size: 24px;
+                color: gray;
+            }}
+            input {{
+                font-size: 20px;
+            }}
+            button {{
+                font-size: 20px;
+                padding: 10px 20px;
+            }}
+        </style>
+    </head>
+    <body>
+
+        <div class="{effect}">
+            {message}
+        </div>
+
+        <h2>{question['q']}</h2>
+
+        <form method="post">
+            <input type="hidden" name="qid" value="{question['id']}">
+            <input name="answer" autofocus>
+            <br><br>
+            <button>こたえる</button>
+        </form>
+
+    </body>
+    </html>
     """
 
 @app.route("/parent")
