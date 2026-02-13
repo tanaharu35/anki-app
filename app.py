@@ -58,7 +58,7 @@ def quiz():
             cur = conn.cursor()
             cur.execute("SELECT streak FROM logs ORDER BY id DESC LIMIT 1")
             last = cur.fetchone()
-            streak = (last[0] if last else 0)
+            streak = (last[0] if last and last[0] is not None else 0)
 
             if correct:
                 streak += 1
@@ -68,11 +68,6 @@ def quiz():
             cur.execute(
                 "INSERT INTO logs (question_id, correct, streak, time) VALUES (?, ?, ?, ?)",
                 (qid, correct, streak, datetime.now().isoformat())
-            )
-
-            conn.execute(
-                "INSERT INTO logs (question_id, correct, time) VALUES (?, ?, ?)",
-                (qid, correct, datetime.now().isoformat())
             )
 
         if correct:
