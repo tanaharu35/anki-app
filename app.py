@@ -11,15 +11,15 @@ DB = "data.db"
 
 def init_db():
     with sqlite3.connect(DB) as conn:
-    conn.execute("""
-    CREATE TABLE IF NOT EXISTS logs (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        question_id INTEGER,
-        correct INTEGER,
-        streak INTEGER,
-        time TEXT
-    )
-    """)
+        conn.execute("""
+        CREATE TABLE IF NOT EXISTS logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            question_id INTEGER,
+            correct INTEGER,
+            streak INTEGER,
+            time TEXT
+        )
+        """)
 
 def select_question():
     with sqlite3.connect(DB) as conn:
