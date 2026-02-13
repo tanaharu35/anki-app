@@ -29,7 +29,7 @@ def quiz():
 
     if request.method == "POST":
         qid = int(request.form["qid"])
-        user_answer = request.form["answer"].strip()
+        user_answer = request.form["answer"]
         question = next(q for q in QUESTIONS if q["id"] == qid)
 
         correct = int(user_answer == question["a"])
@@ -48,6 +48,16 @@ def quiz():
             effect = "wrong"
 
     question = random.choice(QUESTIONS)
+    choices = question["choices"].copy()
+    random.shuffle(choices)
+
+    buttons_html = ""
+    for c in choices:
+        buttons_html += f"""
+        <button name="answer" value="{c}" style="font-size:20px;padding:10px;margin:5px;width:200px;">
+            {c}
+        </button><br>
+        """
 
     return f"""
     <html>
@@ -71,12 +81,8 @@ def quiz():
                 font-size: 24px;
                 color: gray;
             }}
-            input {{
-                font-size: 20px;
-            }}
             button {{
-                font-size: 20px;
-                padding: 10px 20px;
+                border-radius: 12px;
             }}
         </style>
     </head>
@@ -90,14 +96,13 @@ def quiz():
 
         <form method="post">
             <input type="hidden" name="qid" value="{question['id']}">
-            <input name="answer" autofocus>
-            <br><br>
-            <button>こたえる</button>
+            {buttons_html}
         </form>
 
     </body>
     </html>
     """
+
 
 @app.route("/parent")
 def parent():
