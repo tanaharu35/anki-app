@@ -54,7 +54,7 @@ def quiz():
 
         correct = int(user_answer == question["a"])
 
-         with sqlite3.connect(DB) as conn:
+        with sqlite3.connect(DB) as conn:
             cur = conn.cursor()
             cur.execute("SELECT streak FROM logs ORDER BY id DESC LIMIT 1")
             last = cur.fetchone()
