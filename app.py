@@ -54,8 +54,7 @@ def quiz():
 
         correct = int(user_answer == question["a"])
 
-        with sqlite3.connect(DB) as conn:
-        with sqlite3.connect(DB) as conn:
+         with sqlite3.connect(DB) as conn:
             cur = conn.cursor()
             cur.execute("SELECT streak FROM logs ORDER BY id DESC LIMIT 1")
             last = cur.fetchone()
@@ -136,7 +135,11 @@ def quiz():
                 background-color: #cce7ff;
                 border-color: #3399ff;
             }}
-
+            button:active {{
+                background-color: #99d0ff;
+                transform: scale(0.97);
+            }}
+            
         </style>
     </head>
     <body>
