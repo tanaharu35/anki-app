@@ -72,15 +72,26 @@ def quiz():
 
         if correct:
             if streak >= 5:
-                message = "🔥 5れんぞくせいかい！天才！！ 🔥"
+                message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥"
             elif streak >= 3:
-                message = "✨ 3れんぞく！すごい！ ✨"
+                message = f"✨ {streak}れんぞく！すごい！ ✨"
             else:
-                message = "🎉 せいかい！！ 🎉"
+                message = f"🎉 せいかい！！（{streak}れんぞく） 🎉"
             effect = "correct"
-        else:
+            else:
             message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
             effect = "wrong"
+
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    with sqlite3.connect(DB) as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT COUNT(*) FROM logs
+            WHERE correct = 1
+              AND substr(time, 1, 10) = ?
+        """, (today,))
+        today_correct = cur.fetchone()[0]
 
     question = select_question()
     choices = question["choices"].copy()
@@ -135,12 +146,14 @@ def quiz():
                 background-color: #99d0ff;
                 transform: scale(0.97);
             }}
-            
+            .big-streak {{
+                font-size: 40px;
+            }}
         </style>
     </head>
     <body>
 
-        <div class="{effect}">
+        <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
         </div>
 
@@ -149,6 +162,9 @@ def quiz():
         <form method="post">
             <input type="hidden" name="qid" value="{question['id']}">
             {buttons_html}
+            <div style="margin-top:20px;font-size:20px;color:#333;">
+                📊 本日の正解数：{today_correct} 問
+            </div>
         </form>
 
     </body>
