@@ -102,6 +102,7 @@ def quiz():
                 font-family: sans-serif;
                 text-align: center;
                 background-color: {"#fff3a0" if effect=="correct" else "#f0f0f0"};
+                font-seize: 2rem;
             }}
             .correct {{
                 font-size: 32px;
