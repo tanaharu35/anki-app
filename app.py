@@ -46,7 +46,8 @@ def quiz():
 
     message = ""
     effect = ""
-
+    streak = 0
+    
     if request.method == "POST":
         qid = int(request.form["qid"])
         user_answer = request.form["answer"]
