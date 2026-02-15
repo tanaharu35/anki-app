@@ -78,7 +78,7 @@ def quiz():
             else:
                 message = f"🎉 せいかい！！（{streak}れんぞく） 🎉"
             effect = "correct"
-            else:
+        else:
             message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
             effect = "wrong"
 
