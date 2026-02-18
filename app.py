@@ -125,7 +125,7 @@ def quiz():
     buttons_html = ""
     for c in choices:
         buttons_html += f"""
-        <button name="answer" value="{c}" style="font-size:20px;padding:10px;margin:5px;width:200px;">
+        <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
             {c}
         </button><br>
         """
