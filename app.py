@@ -2,12 +2,28 @@ import os
 from flask import Flask, request, redirect
 import random
 import sqlite3
+import gspread
+from google.oauth2.service_account import Credentials
 from questions import QUESTIONS
 from datetime import datetime
 
 app = Flask(__name__)
 
 DB = "data.db"
+
+# ===== Google Sheets 設定 =====
+SCOPES = [
+    "https://www.googleapis.com/auth/spreadsheets"
+]
+
+creds = Credentials.from_service_account_file(
+    "service_account.json",
+    scopes=SCOPES
+)
+
+gc = gspread.authorize(creds)
+sheet = gc.open("study_log").sheet1
+# ==============================
 
 def init_db():
     with sqlite3.connect(DB) as conn:
@@ -70,6 +86,13 @@ def quiz():
                 "INSERT INTO logs (question_id, correct, streak, time) VALUES (?, ?, ?, ?)",
                 (qid, correct, streak, datetime.now().isoformat())
             )
+            
+            sheet.append_row([
+                datetime.now().strftime("%Y-%m-%d"),
+                qid,
+                correct,
+                streak
+            ])
 
         if correct:
             if streak >= 5:
@@ -130,10 +153,10 @@ def quiz():
                 color: gray;
             }}
             button {{
-                font-size: 20px;
+                font-size: 40px;
                 padding: 10px;
                 margin: 5px;
-                width: 200px;
+                width: 400px;
                 border-radius: 12px;
                 background-color: white;
                 border: 2px solid #888;
