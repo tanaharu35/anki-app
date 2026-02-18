@@ -214,26 +214,31 @@ def parent():
 
 @app.route("/admin")
 def admin():
-    init_db()
+    # スプレッドシートから全データ取得（ヘッダ除外）
+    records = sheet.get_all_records()
 
-    with sqlite3.connect(DB) as conn:
-        rows = conn.execute("""
-            SELECT
-              substr(time, 1, 10) as day,
-              COUNT(*) as total,
-              SUM(correct) as correct
-            FROM logs
-            GROUP BY day
-            ORDER BY day DESC
-        """).fetchall()
+    daily = {}
+
+    for r in records:
+        day = r["日付"]
+        correct = int(r["正解"])
+
+        if day not in daily:
+            daily[day] = {"total": 0, "correct": 0}
+
+        daily[day]["total"] += 1
+        daily[day]["correct"] += correct
+
+    # 日付の新しい順に並べ替え
+    rows = sorted(daily.items(), reverse=True)
 
     rows_html = ""
-    for day, total, correct in rows:
+    for day, data in rows:
         rows_html += f"""
         <tr>
             <td>{day}</td>
-            <td>{total}</td>
-            <td>{correct}</td>
+            <td>{data['total']}</td>
+            <td>{data['correct']}</td>
         </tr>
         """
 
