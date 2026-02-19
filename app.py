@@ -318,6 +318,24 @@ def admin():
     <html>
     <head>
       <title>学習ログ（保護者用）</title>
+      <style>
+          body {{
+              font-family: sans-serif;
+              padding: 20px;
+          }}
+          table {{
+              border-collapse: collapse;
+              width: 100%;
+          }}
+          th, td {{
+              border: 1px solid #ccc;
+              padding: 10px;
+              text-align: center;
+          }}
+          th {{
+              background-color: #f5f5f5;
+          }}
+      </style>
     </head>
     <body>
       <h2>📊 学習状況</h2>
@@ -356,24 +374,6 @@ def admin():
 #    <html>
 #    <head>
 #        <title>学習ログ（保護者用）</title>
-#        <style>
-#            body {{
-#                font-family: sans-serif;
-#                padding: 20px;
-#            }}
-#            table {{
-#                border-collapse: collapse;
-#                width: 100%;
-#            }}
-#            th, td {{
-#                border: 1px solid #ccc;
-#                padding: 10px;
-#                text-align: center;
-#            }}
-#            th {{
-#                background-color: #f5f5f5;
-#            }}
-#        </style>
 #    </head>
 #    <body>
 #
