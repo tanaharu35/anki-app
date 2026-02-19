@@ -179,7 +179,7 @@ def quiz():
             )
             
             sheet.append_row([
-                datetime.now().strftime("%Y-%m-%d"),
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 qid,
                 correct,
                 streak
