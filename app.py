@@ -5,11 +5,15 @@ import sqlite3
 import gspread
 from google.oauth2.service_account import Credentials
 from questions import QUESTIONS
-from datetime import datetime
+#from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 app = Flask(__name__)
 
 DB = "data.db"
+
+JST = timezone(timedelta(hours=9))
+now_jst = datetime.now(JST)
 
 # ===== Google Sheets 設定 =====
 SCOPES = [
@@ -173,16 +177,26 @@ def quiz():
             else:
                 streak = 0
 
+#            cur.execute(
+#                "INSERT INTO logs (question_id, correct, streak, time) VALUES (?, ?, ?, ?)",
+#                (qid, correct, streak, datetime.now().isoformat())
+#            )
             cur.execute(
                 "INSERT INTO logs (question_id, correct, streak, time) VALUES (?, ?, ?, ?)",
-                (qid, correct, streak, datetime.now().isoformat())
+                (qid, correct, streak, now_jst.isoformat())
             )
-            
+#            sheet.append_row([
+#                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+#                qid,
+#                correct,
+#                streak
+#            ])
             sheet.append_row([
-                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                now_jst.strftime("%Y-%m-%d"),
                 qid,
                 correct,
-                streak
+                streak,
+                now_jst.strftime("%H:%M:%S")
             ])
 
         if correct:
