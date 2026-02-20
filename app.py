@@ -191,13 +191,13 @@ def quiz():
 #                correct,
 #                streak
 #            ])
-            sheet.append_row([
-                now_jst.strftime("%Y-%m-%d"),
+            sheet.insert_row([
+                date,
                 qid,
                 correct,
                 streak,
-                now_jst.strftime("%H:%M:%S")
-            ])
+                time
+            ], index=2)
 
         if correct:
             if streak >= 5:
