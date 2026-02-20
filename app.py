@@ -13,7 +13,6 @@ app = Flask(__name__)
 DB = "data.db"
 
 JST = timezone(timedelta(hours=9))
-now_jst = datetime.now(JST)
 
 # ===== Google Sheets 設定 =====
 SCOPES = [
@@ -158,6 +157,7 @@ def quiz():
     message = ""
     effect = ""
     streak = 0
+    now_jst = datetime.now(JST)
     
     if request.method == "POST":
         qid = int(request.form["qid"])
