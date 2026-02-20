@@ -192,11 +192,11 @@ def quiz():
 #                streak
 #            ])
             sheet.insert_row([
-                date,
+                now_jst.strftime("%Y-%m-%d"),
                 qid,
                 correct,
                 streak,
-                time
+                now_jst.strftime("%H:%M:%S")
             ], index=2)
 
         if correct:
