@@ -236,7 +236,7 @@ QUESTIONS = [
 {"id":157,"q":"「mean（意味する）の過去形」はどれ？","a":"meant","choices":["meant","mean","means","meaning","meet"]},
 {"id":158,"q":"「mean（意味する）の過去分詞」はどれ？","a":"meant","choices":["meant","mean","means","meaning","meet"]},
 {"id":159,"q":"「彼の言葉はそれを意味していた＝His words (  ) that.」(  )に入るのはどれ？","a":"meant","choices":["meant","mean","means","meaning","meet"]},
-{"id":160,"q":"「その言葉は大切なことを意味してきた＝The word has always (  ) something important.」(  )に入るのはどれ？","a":"meant","choices":["meant","mean","means","meaning","meet"]}
+{"id":160,"q":"「その言葉は大切なことを意味してきた＝The word has always (  ) something important.」(  )に入るのはどれ？","a":"meant","choices":["meant","mean","means","meaning","meet"]},
 #{"id":159,"q":"「mean（意味する）の三人称単数現在形」はどれ？","a":"means","choices":["meant","mean","means","meaning","meet"]},
 #{"id":160,"q":"「mean（意味する）の現在分詞」はどれ？","a":"meaning","choices":["meant","mean","means","meaning","meet"]},
 {"id":161,"q":"「meet（会う）の過去形」はどれ？","a":"met","choices":["met","meet","meets","meeting","mean"]},
@@ -260,7 +260,7 @@ QUESTIONS = [
 {"id":173,"q":"「read（読む）の過去形」はどれ？","a":"read","choices":["read","reads","reading","read","red"]},
 {"id":174,"q":"「read（読む）の過去分詞」はどれ？","a":"read","choices":["read","reads","reading","read","red"]},
 {"id":175,"q":"「彼女はその本を読んだ＝She (  ) the book.」","a":"read","choices":["read","reads","reading","red","ride"]},
-{"id":176,"q":"「彼女はその本を読んだことがある＝She has (  ) the book.」","a":"read","choices":["read","reads","reading","red","ride"]}
+{"id":176,"q":"「彼女はその本を読んだことがある＝She has (  ) the book.」","a":"read","choices":["read","reads","reading","red","ride"]},
 #{"id":175,"q":"「read（読む）の三人称単数現在形」はどれ？","a":"reads","choices":["read","reads","reading","read","red"]},
 #{"id":176,"q":"「read（読む）の現在分詞」はどれ？","a":"reading","choices":["read","reads","reading","read","red"]},
 {"id":177,"q":"「ride（乗る）の過去形」はどれ？","a":"rode","choices":["rode","ridden","rides","riding","rider"]},
@@ -296,7 +296,7 @@ QUESTIONS = [
 {"id":197,"q":"「sell（売る）の過去形」はどれ？","a":"sold","choices":["sold","sell","sells","selling","see"]},
 {"id":198,"q":"「sell（売る）の過去分詞」はどれ？","a":"sold","choices":["sold","sell","sells","selling","see"]},
 {"id":199,"q":"「彼は車を売った＝He (  ) his car.」","a":"sold","choices":["sold","sell","sells","selling","see"]},
-{"id":200,"q":"「彼は多くの商品を売ってきた＝He has (  ) many items.」","a":"sold","choices":["sold","sell","sells","selling","see"]}
+{"id":200,"q":"「彼は多くの商品を売ってきた＝He has (  ) many items.」","a":"sold","choices":["sold","sell","sells","selling","see"]},
 #{"id":199,"q":"「sell（売る）の三人称単数現在形」はどれ？","a":"sells","choices":["sold","sell","sells","selling","see"]},
 #{"id":200,"q":"「sell（売る）の現在分詞」はどれ？","a":"selling","choices":["sold","sell","sells","selling","see"]},
 {"id":201,"q":"「send（送る）の過去形」はどれ？","a":"sent","choices":["sent","send","sends","sending","sell"]},
@@ -332,7 +332,7 @@ QUESTIONS = [
 {"id":221,"q":"「sleep（眠る）の過去形」はどれ？","a":"slept","choices":["slept","sleep","sleeps","sleeping","slope"]},
 {"id":222,"q":"「sleep（眠る）の過去分詞」はどれ？","a":"slept","choices":["slept","sleep","sleeps","sleeping","slope"]},
 {"id":223,"q":"「彼はよく眠った＝He (  ) well.」","a":"slept","choices":["slept","sleep","sleeps","sleeping","slope"]},
-{"id":224,"q":"「彼は十分眠っている＝He has (  ) enough.」","a":"slept","choices":["slept","sleep","sleeps","sleeping","slope"]}
+{"id":224,"q":"「彼は十分眠っている＝He has (  ) enough.」","a":"slept","choices":["slept","sleep","sleeps","sleeping","slope"]},
 #{"id":223,"q":"「sleep（眠る）の三人称単数現在形」はどれ？","a":"sleeps","choices":["slept","sleep","sleeps","sleeping","slope"]},
 #{"id":224,"q":"「sleep（眠る）の現在分詞」はどれ？","a":"sleeping","choices":["slept","sleep","sleeps","sleeping","slope"]},
 {"id":225,"q":"「speak（話す）の過去形」はどれ？","a":"spoke","choices":["spoke","spoken","speaks","speaking","space"]},
@@ -368,7 +368,7 @@ QUESTIONS = [
 {"id":245,"q":"「take（取る）の過去形」はどれ？","a":"took","choices":["took","taken","takes","taking","task"]},
 {"id":246,"q":"「take（取る）の過去分詞」はどれ？","a":"taken","choices":["took","taken","takes","taking","task"]},
 {"id":247,"q":"「彼女は写真を撮った＝She (  ) a photo.」","a":"took","choices":["took","taken","takes","taking","task"]},
-{"id":248,"q":"「彼女は多くの写真を撮ってきた＝She has (  ) many photos.」","a":"taken","choices":["took","taken","takes","taking","task"]}
+{"id":248,"q":"「彼女は多くの写真を撮ってきた＝She has (  ) many photos.」","a":"taken","choices":["took","taken","takes","taking","task"]},
 #{"id":247,"q":"「take（取る）の三人称単数現在形」はどれ？","a":"takes","choices":["took","taken","takes","taking","task"]},
 #{"id":248,"q":"「take（取る）の現在分詞」はどれ？","a":"taking","choices":["took","taken","takes","taking","task"]},
 {"id":249,"q":"「teach（教える）の過去形」はどれ？","a":"taught","choices":["taught","teach","teaches","teaching","talk"]},
@@ -410,7 +410,7 @@ QUESTIONS = [
 {"id":273,"q":"「write（書く）の過去形」はどれ？","a":"wrote","choices":["wrote","written","writes","writing","win"]},
 {"id":274,"q":"「write（書く）の過去分詞」はどれ？","a":"written","choices":["wrote","written","writes","writing","win"]},
 {"id":275,"q":"「彼は手紙を書いた＝He (  ) a letter.」","a":"wrote","choices":["wrote","written","writes","writing","win"]},
-{"id":276,"q":"「彼は多くの手紙を書いてきた＝He has (  ) many letters.」","a":"written","choices":["wrote","written","writes","writing","win"]}
+{"id":276,"q":"「彼は多くの手紙を書いてきた＝He has (  ) many letters.」","a":"written","choices":["wrote","written","writes","writing","win"]},
 #{"id":275,"q":"「write（書く）の三人称単数現在形」はどれ？","a":"writes","choices":["wrote","written","writes","writing","win"]},
 #{"id":276,"q":"「write（書く）の現在分詞」はどれ？","a":"writing","choices":["wrote","written","writes","writing","win"]},
 ]
