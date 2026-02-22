@@ -217,8 +217,8 @@ QUESTIONS = [
 #{"id":144,"q":"「leave（去る）の現在分詞」はどれ？","a":"leaving","choices":["left","leave","leaves","leaving","lead"]},
 {"id":145,"q":"「lend（貸す）の過去形」はどれ？","a":"lent","choices":["lent","lend","lends","lending","leave"]},
 {"id":146,"q":"「lend（貸す）の過去分詞」はどれ？","a":"lent","choices":["lent","lend","lends","lending","leave"]},
-{"id":143,"q":"「彼は昨日早く家を出た＝He (  ) home early yesterday.」(  )に入るのはどれ？","a":"left","choices":["left","leave","leaves","leaving","lead"]},
-{"id":144,"q":"「彼はすでに家を出ている＝He has already (  ) home.」(  )に入るのはどれ？","a":"left","choices":["left","leave","leaves","leaving","lead"]}
+{"id":147,"q":"「彼は昨日早く家を出た＝He (  ) home early yesterday.」(  )に入るのはどれ？","a":"left","choices":["left","leave","leaves","leaving","lead"]},
+{"id":148,"q":"「彼はすでに家を出ている＝He has already (  ) home.」(  )に入るのはどれ？","a":"left","choices":["left","leave","leaves","leaving","lead"]},
 #{"id":147,"q":"「lend（貸す）の三人称単数現在形」はどれ？","a":"lends","choices":["lent","lend","lends","lending","leave"]},
 #{"id":148,"q":"「lend（貸す）の現在分詞」はどれ？","a":"lending","choices":["lent","lend","lends","lending","leave"]},
 {"id":149,"q":"「lose（失う）の過去形」はどれ？","a":"lost","choices":["lost","lose","loses","losing","look"]},
