@@ -184,7 +184,7 @@ QUESTIONS = [
 {"id":121,"q":"「hold（持つ）の過去形」はどれ？","a":"held","choices":["held","hold","holds","holding","home"]},
 {"id":122,"q":"「hold（持つ）の過去分詞」はどれ？","a":"held","choices":["held","hold","holds","holding","home"]},
 {"id":123,"q":"「彼は重い箱を持っていた＝He (  ) the heavy box.」(  )に入るのはどれ？","a":"held","choices":["held","hold","holds","holding","helmet"]},
-{"id":124,"q":"「彼はその箱をずっと持っている＝He has (  ) the box for a long time.」(  )に入るのはどれ？","a":"held","choices":["held","hold","holds","holding","helmet"]}
+{"id":124,"q":"「彼はその箱をずっと持っている＝He has (  ) the box for a long time.」(  )に入るのはどれ？","a":"held","choices":["held","hold","holds","holding","helmet"]},
 #{"id":123,"q":"「hold（持つ）の三人称単数現在形」はどれ？","a":"holds","choices":["held","hold","holds","holding","home"]},
 #{"id":124,"q":"「hold（持つ）の現在分詞」はどれ？","a":"holding","choices":["held","hold","holds","holding","home"]},
 {"id":125,"q":"「hurt（傷つける）の過去形」はどれ？","a":"hurt","choices":["hurt","hurts","hurting","hurt","hold"]},
