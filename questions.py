@@ -60,11 +60,12 @@ for symbol, group, period in elements:
         "a": correct
     })
 
-    random.shuffle(questions)
-
     for i, q in enumerate(questions, start=1):
         q["id"] = i
   
+    random.shuffle(questions)
+
     QUESTIONS = questions
+
 
 
