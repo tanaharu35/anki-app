@@ -61,3 +61,5 @@ for symbol, group, period in elements:
     })
 
     random.shuffle(questions)
+    QUESTIONS = questions
+
