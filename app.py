@@ -290,11 +290,6 @@ def quiz():
         </style>
     </head>
     <body>
-        <script>
-        document.getElementById("periodic").onclick = function() {{
-            this.classList.toggle("zoom");
-        }};
-        </script>
         <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
         </div>
@@ -310,7 +305,11 @@ def quiz():
                 📊 本日の正解数：{today_correct} 問
             </div>
         </form>
-
+        <script>
+        document.getElementById("periodic").onclick = function() {{
+            this.classList.toggle("zoom");
+        }};
+        </script>
     </body>
     </html>
     """
