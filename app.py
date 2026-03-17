@@ -278,22 +278,22 @@ def quiz():
             .big-streak {{
                 font-size: 40px;
             }}
-            #periodic {
+            #periodic {{
                 transition: 0.3s;
-            }
+            }}
 
-            #periodic.zoom {
+            #periodic.zoom {{
                 transform: scale(1.8);
                 z-index: 10;
                 position: relative;
-            }
+            }}
         </style>
     </head>
     <body>
         <script>
-        document.getElementById("periodic").onclick = function() {
+        document.getElementById("periodic").onclick = function() {{
             this.classList.toggle("zoom");
-        };
+        }};
         </script>
         <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
