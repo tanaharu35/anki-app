@@ -285,8 +285,11 @@ def quiz():
         <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
         </div>
+#        <div style="margin:20px;">
+#            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px;">
+#        </div>
         <div style="margin:20px;">
-            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px;">
+            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
         </div>
         <h2>{question['q']}</h2>
 
