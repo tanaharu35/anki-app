@@ -278,18 +278,28 @@ def quiz():
             .big-streak {{
                 font-size: 40px;
             }}
+            #periodic {
+                transition: 0.3s;
+            }
+
+            #periodic.zoom {
+                transform: scale(1.8);
+                z-index: 10;
+                position: relative;
+            }
         </style>
     </head>
     <body>
-
+        <script>
+        document.getElementById("periodic").onclick = function() {
+            this.classList.toggle("zoom");
+        };
+        </script>
         <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
         </div>
-#        <div style="margin:20px;">
-#            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px;">
-#        </div>
         <div style="margin:20px;">
-            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+            <img src="/static/syuuki.jpg" id="periodic" style="width:90%; max-width:800px; cursor:pointer;">
         </div>
         <h2>{question['q']}</h2>
 
