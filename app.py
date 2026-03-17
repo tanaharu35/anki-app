@@ -294,7 +294,7 @@ def quiz():
             {message}
         </div>
         <div style="margin:20px;">
-            <img src="/static/syuuki.jpg" id="periodic" style="width:90%; max-width:800px; cursor:pointer;">
+            <img src="/static/syuuki.jpg" id="periodic" style="width:100%; max-width:900px; cursor:pointer;">
         </div>
         <h2>{question['q']}</h2>
 
@@ -305,11 +305,12 @@ def quiz():
                 📊 本日の正解数：{today_correct} 問
             </div>
         </form>
-        <script>
+<!--        <script>
         document.getElementById("periodic").onclick = function() {{
             this.classList.toggle("zoom");
         }};
         </script>
+--!>
     </body>
     </html>
     """
