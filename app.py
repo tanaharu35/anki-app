@@ -285,7 +285,9 @@ def quiz():
         <div class="{effect} {'big-streak' if streak >= 5 else ''}">
             {message}
         </div>
-
+        <div style="margin:20px;">
+            <img src="/static/syuuki.jpg" style="width:90%; max-width:800px;">
+        </div>
         <h2>{question['q']}</h2>
 
         <form method="post">
