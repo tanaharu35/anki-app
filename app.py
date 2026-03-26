@@ -226,13 +226,28 @@ def quiz():
     choices = question["choices"].copy()
     random.shuffle(choices)
 
-    buttons_html = ""
-    for c in choices:
-        buttons_html += f"""
-        <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
-            {c}
-        </button><br>
+    if question["type"] == "choice":
+        buttons_html = ""
+        for c in choices:
+            buttons_html += f"""
+            <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
+                {c}
+            </button><br>
+            """
+    else:
+        buttons_html = f"""
+        <input type="text" name="answer" style="font-size:30px;">
+        <button type="submit">回答</button>
         """
+
+#    buttons_html = ""
+#    for c in choices:
+#        buttons_html += f"""
+#        <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
+#            {c}
+#        </button><br>
+#        """
+
 
     return f"""
     <html>
