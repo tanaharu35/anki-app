@@ -161,7 +161,8 @@ def quiz():
     
     if request.method == "POST":
         qid = int(request.form["qid"])
-        user_answer = request.form["answer"]
+        user_answer = request.form.get("answer", "")
+#        user_answer = request.form["answer"]
         question = next(q for q in QUESTIONS if q["id"] == qid)
 
         correct = int(user_answer == question["a"])
@@ -223,22 +224,37 @@ def quiz():
         today_correct = cur.fetchone()[0]
 
     question = select_question()
-    choices = question["choices"].copy()
+    if question["type"] == "choice":
+        choices = question["choices"].copy()
+    else:
+        choices = []
+#    choices = question["choices"].copy()
     random.shuffle(choices)
 
     if question["type"] == "choice":
-        buttons_html = ""
-        for c in choices:
-            buttons_html += f"""
-            <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
-                {c}
-            </button><br>
-            """
+        buttons_html = "".join([
+            f'<button name="answer" value="{c}">{c}</button><br>'
+            for c in choices
+        ])
     else:
-        buttons_html = f"""
+        buttons_html = """
         <input type="text" name="answer" style="font-size:30px;">
         <button type="submit">回答</button>
         """
+    
+#    if question["type"] == "choice":
+#        buttons_html = ""
+#        for c in choices:
+#            buttons_html += f"""
+#            <button name="answer" value="{c}" style="font-size:40px;padding:10px;margin:5px;width:400px;">
+#                {c}
+#            </button><br>
+#            """
+#    else:
+#        buttons_html = f"""
+#        <input type="text" name="answer" style="font-size:30px;">
+#        <button type="submit">回答</button>
+#        """
 
 #    buttons_html = ""
 #    for c in choices:
