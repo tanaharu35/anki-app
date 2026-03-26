@@ -238,7 +238,7 @@ def quiz():
         ])
     else:
         buttons_html = """
-        <input type="text" name="answer" style="font-size:30px;">
+        <input type="text" name="answer" style="font-size:30px;"><br>
         <button type="submit">回答</button>
         """
     
