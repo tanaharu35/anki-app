@@ -224,14 +224,16 @@ def quiz():
         today_correct = cur.fetchone()[0]
 
     question = select_question()
-    if question["type"] == "choice":
+    if "choices" in question:
+#    if question["type"] == "choice":
         choices = question["choices"].copy()
     else:
         choices = []
 #    choices = question["choices"].copy()
     random.shuffle(choices)
 
-    if question["type"] == "choice":
+    if "choices" in question:
+#    if question["type"] == "choice":
         buttons_html = "".join([
             f'<button name="answer" value="{c}">{c}</button><br>'
             for c in choices
