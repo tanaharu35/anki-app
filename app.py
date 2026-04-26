@@ -293,8 +293,8 @@ def quiz():
             button {{
                 font-size: 40px;
                 padding: 10px;
-                margin: 5px;
-                width: 400px;
+                margin: 50px;
+                width: 800px;
                 border-radius: 12px;
                 background-color: white;
                 border: 2px solid #888;
