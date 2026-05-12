@@ -202,11 +202,11 @@ def quiz():
 
         if correct:
             if streak >= 5:
-                message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥"
+                message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥　「{question['a']}」"
             elif streak >= 3:
-                message = f"✨ {streak}れんぞく！すごい！ ✨"
+                message = f"✨ {streak}れんぞく！すごい！ ✨　「{question['a']}」"
             else:
-                message = f"🎉 せいかい！！（{streak}れんぞく） 🎉"
+                message = f"🎉 せいかい！！（{streak}れんぞく） 🎉　「{question['a']}」"
             effect = "correct"
         else:
             message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
