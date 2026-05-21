@@ -202,11 +202,11 @@ def quiz():
 
         if correct:
             if streak >= 5:
-                message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥　「{question['a']}」"
+                message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥"
             elif streak >= 3:
-                message = f"✨ {streak}れんぞく！すごい！ ✨　「{question['a']}」"
+                message = f"✨ {streak}れんぞく！すごい！ ✨"
             else:
-                message = f"🎉 せいかい！！（{streak}れんぞく） 🎉　「{question['a']}」"
+                message = f"🎉 せいかい！！（{streak}れんぞく） 🎉"
             effect = "correct"
         else:
             message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
@@ -224,16 +224,14 @@ def quiz():
         today_correct = cur.fetchone()[0]
 
     question = select_question()
-    if "choices" in question:
-#    if question["type"] == "choice":
+    if question["type"] == "choice":
         choices = question["choices"].copy()
     else:
         choices = []
 #    choices = question["choices"].copy()
     random.shuffle(choices)
 
-    if "choices" in question:
-#    if question["type"] == "choice":
+    if question["type"] == "choice":
         buttons_html = "".join([
             f'<button name="answer" value="{c}">{c}</button><br>'
             for c in choices
@@ -293,8 +291,8 @@ def quiz():
             button {{
                 font-size: 40px;
                 padding: 10px;
-                margin: 50px;
-                width: 800px;
+                margin: 5px;
+                width: 400px;
                 border-radius: 12px;
                 background-color: white;
                 border: 2px solid #888;
