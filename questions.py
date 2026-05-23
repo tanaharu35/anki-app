@@ -2,7 +2,7 @@ import random
 
 QUESTIONS = [
 {"id":60000,"q":"a few ～","a":"2つ3つの","choices":["2つ3つの","たくさんの","まったくない","ほとんどの","すべての"]},
-{"id":60001,"q":"2つ3つの","a":"a few ～","choices":["a few ～","a lot of ～","none of ～","most of ～","all of ～"]}
+{"id":60001,"q":"2つ3つの","a":"a few ～","choices":["a few ～","a lot of ～","none of ～","most of ～","all of ～"]},
 {"id":60002,"q":"a glass of ～","a":"コップ1杯の～","choices":["コップ1杯の～","1袋の～","多くの～","少しの～","～に到着する"]},
 {"id":60003,"q":"コップ1杯の～","a":"a glass of ～","choices":["a glass of ～","a pair of ～","a slice of ～","be full of ～","after school"]},
 {"id":60004,"q":"a little too","a":"少し～すぎる","choices":["少し～すぎる","非常に","世界中で","最初は","～がじょうず"]},
@@ -64,7 +64,7 @@ QUESTIONS = [
 {"id":60060,"q":"be glad to do","a":"～してうれしい","choices":["～してうれしい","～することができる","ついに、とうとう","1かけらの～","世界中で"]},
 {"id":60061,"q":"～してうれしい","a":"be glad to do","choices":["be glad to do","be able to ～","at last","a piece of ～","all over the world"]},
 {"id":60062,"q":"be good at ～","a":"～がじょうず","choices":["～がじょうず","～に到着する","学校で","多くの～","最初は"]},
-{"id":60063,"q":"～がじょうず","a":"be good at ～","choices":["be good at ～","arrive in[at,on] ～","at school","a lot of ～","at first"]}
+{"id":60063,"q":"～がじょうず","a":"be good at ～","choices":["be good at ～","arrive in[at,on] ～","at school","a lot of ～","at first"]},
 ]
 
 # 任意でシャッフル関数
