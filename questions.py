@@ -401,8 +401,7 @@ QUESTIONS = [
 def shuffled():
     items = QUESTIONS.copy()
     random.shuffle(items)
-    return items
-
+    return items
 
 
 
