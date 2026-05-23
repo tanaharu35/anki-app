@@ -262,7 +262,7 @@ QUESTIONS = [
 {"id":60258,"q":"move to ～","a":"～に移動する","choices":["～に移動する","～を車で迎えに来る","右手に","この近くに","賞を受ける"]},
 {"id":60259,"q":"～に移動する","a":"move to ～","choices":["move to ～","pick up ～","on one's right","near here","receive a prize"]},
 {"id":60260,"q":"near here","a":"この近くに","choices":["この近くに","向こうに","逃げ去る","ちょうど今","貯金する"]},
-{"id":60261,"q":"この近くに","a":"near here","choices":["near here","over ther","run away","right now","save money"]},
+{"id":60261,"q":"この近くに","a":"near here","choices":["near here","over there","run away","right now","save money"]},
 {"id":60262,"q":"need to do","a":"～する必要がある","choices":["～する必要がある","～しなくてよい","仕事で","週末に","辺りを見回す"]},
 {"id":60263,"q":"～する必要がある","a":"need to do","choices":["need to do","not have to do","on business","on weekends","look around"]},
 {"id":60264,"q":"not ～ at all","a":"まったく～ない","choices":["まったく～ない","まだ～ない","右手に","向こうに","試験に合格する"]},
@@ -287,8 +287,8 @@ QUESTIONS = [
 {"id":60283,"q":"もう1つの","a":"one more","choices":["one more","one of ～","near here","save money","receive a prize"]},
 {"id":60284,"q":"one of ～","a":"～の1つ","choices":["～の1つ","もう1つの","右手に","向こうに","ちょうど今"]},
 {"id":60285,"q":"～の1つ","a":"one of ～","choices":["one of ～","one more","on one's right","over ther","right now"]},
-{"id":60286,"q":"over ther","a":"向こうに","choices":["向こうに","この近くに","～を探す","辺りを見回す","週末に"]},
-{"id":60287,"q":"向こうに","a":"over ther","choices":["over ther","near here","look for ～","look around","on weekends"]},
+{"id":60286,"q":"over there","a":"向こうに","choices":["向こうに","この近くに","～を探す","辺りを見回す","週末に"]},
+{"id":60287,"q":"向こうに","a":"over there","choices":["over there","near here","look for ～","look around","on weekends"]},
 {"id":60288,"q":"pass the exam","a":"試験に合格する","choices":["試験に合格する","賞を受ける","仕事で","右手に","逃げ去る"]},
 {"id":60289,"q":"試験に合格する","a":"pass the exam","choices":["pass the exam","receive a prize","on business","on one's right","run away"]},
 {"id":60290,"q":"pick up ～","a":"～を車で迎えに来る","choices":["～を車で迎えに来る","～に移動する","この近くに","向こうに","ちょうど今"]},
@@ -393,15 +393,16 @@ QUESTIONS = [
 {"id":60389,"q":"どこへ～すべきか","a":"where to do","choices":["where to do","what to do","when to do","work well","wait for ～"]},
 {"id":60390,"q":"work well","a":"うまくいく","choices":["うまくいく","起きる","左に曲がる","音量を上げる","～を消す"]},
 {"id":60391,"q":"うまくいく","a":"work well","choices":["work well","wake up","turn left","turn up ～","turn off ～"]},
-{"id":60392,"q":"～ years old","a":"～歳","choices":["～歳","月に2回","～になりたい","何を～すべきか","起きる"]},
-{"id":60393,"q":"～歳","a":"～ years old","choices":["～ years old","twice a month","want to be","what to do","wake up"]},
+{"id":60392,"q":"years old","a":"年齢","choices":["年齢","月に2回","～になりたい","何を～すべきか","起きる"]},
+{"id":60393,"q":"年齢","a":"years old","choices":["years old","twice a month","want to be","what to do","wake up"]},
 ]
 
 # 任意でシャッフル関数
 def shuffled():
     items = QUESTIONS.copy()
     random.shuffle(items)
-    return items
+    return items
+
 
 
 
