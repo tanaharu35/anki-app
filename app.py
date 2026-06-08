@@ -1,5 +1,6 @@
 import os
-from flask import Flask, request, redirect
+#from flask import Flask, request, redirect
+from flask import Flask, request, redirect, session
 import random
 import sqlite3
 import gspread
@@ -9,6 +10,7 @@ from questions import QUESTIONS
 from datetime import datetime, timezone, timedelta
 
 app = Flask(__name__)
+app.secret_key = "quiz-secret-key"
 
 DB = "data.db"
 
@@ -154,9 +156,12 @@ def render_word_rank(records):
 def quiz():
     init_db()
 
-    message = ""
-    effect = ""
-    streak = 0
+#    message = ""
+#    effect = ""
+#    streak = 0
+    message = session.pop("message", "")
+    effect = session.pop("effect", "")
+    streak = session.pop("streak", 0)
     now_jst = datetime.now(JST)
     
     if request.method == "POST":
@@ -200,7 +205,7 @@ def quiz():
                 now_jst.strftime("%H:%M:%S")
             ], index=2)
 
-        if correct:
+       if correct:
             if streak >= 5:
                 message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥　「{question['a']}」"
             elif streak >= 3:
@@ -212,7 +217,13 @@ def quiz():
             message = f"🙂 おしい！ こたえは「{question['a']}」だよ"
             effect = "wrong"
 
-    today = datetime.now().strftime("%Y-%m-%d")
+        session["message"] = message
+        session["effect"] = effect
+        session["streak"] = streak
+
+        return redirect("/")
+
+    today = now_jst.strftime("%Y-%m-%d")
 
     with sqlite3.connect(DB) as conn:
         cur = conn.cursor()
