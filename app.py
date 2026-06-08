@@ -205,7 +205,7 @@ def quiz():
                 now_jst.strftime("%H:%M:%S")
             ], index=2)
 
-       if correct:
+        if correct:
             if streak >= 5:
                 message = f"🔥 {streak}れんぞくせいかい！天才！！ 🔥　「{question['a']}」"
             elif streak >= 3:
